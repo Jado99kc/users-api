@@ -34,6 +34,7 @@ Route::group([
     'prefix'=> 'users',
     'middleware'=> 'auth:api'
 ], function (){
+    Route::get('/index', [UserController::class, 'index']);
     Route::get('/show/{id}', [UserController::class, 'show']);
     Route::post('/update/{id}', [UserController::class, 'update']);
     Route::post('/destroy/{id}', [UserController::class, 'destroy']);

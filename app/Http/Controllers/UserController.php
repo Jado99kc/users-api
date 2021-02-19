@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class UserController extends Controller
 {
     
     public function index()
     {
-        return User::all();
+        return User::where('role_id', '!=', 1)->paginate(2);
+        // return User::paginate(15);
     }
 
 

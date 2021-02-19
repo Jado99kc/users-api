@@ -24,9 +24,9 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
-
+        
         if(!$token = Auth::attempt($request->only('email', 'password'))){
-            return response(null, 401);
+            return response($request->only('email', 'password'), 401);
         }
         return response()->json(compact('token'));
      }

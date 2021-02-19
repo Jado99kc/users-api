@@ -27,6 +27,7 @@ class User extends Authenticatable implements JWTSubject
         'role_id'
     ];
 
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -44,6 +45,8 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function role(){
